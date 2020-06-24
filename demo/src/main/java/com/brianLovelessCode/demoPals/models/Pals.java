@@ -1,6 +1,5 @@
 package com.brianLovelessCode.demoPals.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
@@ -17,7 +16,9 @@ public class Pals {
     private Long id;
 
     private String name;
+    private String email;
     private String interests;
+
 
     public Long getId() {
         return id;
@@ -33,6 +34,14 @@ public class Pals {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getInterests() {

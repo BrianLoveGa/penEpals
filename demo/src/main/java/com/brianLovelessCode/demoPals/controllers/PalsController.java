@@ -33,4 +33,6 @@ public class PalsController {
         // show one by id
         return palsRepository.getOne(id);
     }
+
+    // add delete function
 }
