@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.Optional;
 import java.util.List;
 
 @RestController
@@ -34,5 +34,28 @@ public class PalsController {
         return palsRepository.getOne(id);
     }
 
-    // add delete function
+
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        palsRepository.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Pals update(@RequestBody Pals palsUpdate, @PathVariable("id") Long id) {
+
+        Optional<Pals> dbSearch = palsRepository.findById(id);
+
+        if (dbSearch.isPresent()){
+            Pals pal = dbSearch.get();
+            pal.setName(palsUpdate.getName());
+            pal.setEmail(palsUpdate.getEmail());
+            pal.setInterests(palsUpdate.getInterests());
+
+            return palsRepository.save(pal);
+        }else{
+            return palsUpdate;
+        }
+
+    }
 }
