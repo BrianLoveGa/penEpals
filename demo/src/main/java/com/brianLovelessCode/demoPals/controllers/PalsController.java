@@ -1,12 +1,9 @@
 package com.brianLovelessCode.demoPals.controllers;
-
 import com.brianLovelessCode.demoPals.models.Pals;
 import com.brianLovelessCode.demoPals.repositories.PalsRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Optional;
 import java.util.List;
 
