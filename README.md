@@ -1,1 +1,1 @@
-Attempting to make a java backend.
+java backend for Pen E Pals Project.
